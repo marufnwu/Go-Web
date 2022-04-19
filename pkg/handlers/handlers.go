@@ -1,9 +1,9 @@
 package handlers
 
 import (
-	"github.com/marufnwu/go-web/pkg/config"
-	"github.com/marufnwu/go-web/pkg/models"
-	"github.com/marufnwu/go-web/pkg/render"
+	"github.com/marufnwu/go-bookings-website/pkg/config"
+	"github.com/marufnwu/go-bookings-website/pkg/models"
+	"github.com/marufnwu/go-bookings-website/pkg/render"
 	"net/http"
 )
 

@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
-	"github.com/marufnwu/go-web/pkg/config"
-	"github.com/marufnwu/go-web/pkg/handlers"
+	"github.com/marufnwu/go-bookings-website/pkg/config"
+	"github.com/marufnwu/go-bookings-website/pkg/handlers"
 	"net/http"
 )
 

@@ -3,8 +3,8 @@ package render
 import (
 	"bytes"
 	"fmt"
-	"github.com/marufnwu/go-web/pkg/config"
-	"github.com/marufnwu/go-web/pkg/models"
+	"github.com/marufnwu/go-bookings-website/pkg/config"
+	"github.com/marufnwu/go-bookings-website/pkg/models"
 	"html/template"
 	"log"
 	"net/http"
