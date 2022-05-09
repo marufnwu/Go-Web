@@ -69,8 +69,15 @@ func (repo *Repository) PostAvailability(writer http.ResponseWriter, request *ht
 }
 
 func (repo *Repository) Reservation(writer http.ResponseWriter, request *http.Request) {
+
+	var emptyReservation models.Reservation
+	data := make(map[string]interface{})
+
+	data["reservation"] = emptyReservation
+
 	render.RenderTemplate(writer, request, "make-reservation.page.tmpl", &models.TemplateData{
 		Form: forms.New(nil),
+		Data: data,
 	})
 }
 
