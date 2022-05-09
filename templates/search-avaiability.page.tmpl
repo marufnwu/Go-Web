@@ -1,0 +1,37 @@
+{{template "base" .}}
+
+{{define "content"}}
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h1 class="mt-5">Search For Availability</h1>
+
+                <form action="/search-availability" method="post" novalidate class="needs-validation" autocomplete="off">
+
+                    <input autocomplete="false" type="hidden" name="csrf_token" value="{{.CSRFToken}}">
+
+                    <div class="form-row" id="foo">
+                        <div class="col">
+                            <label for="start_date" class="form-label">Starting Date</label>
+                            <input required type="text" class="form-control" name="start_date" id="start_date" aria-describedby="start_date">
+                            <div id="startDateHelp" class="form-text">Enter your starting date</div>
+                        </div>
+
+                        <div class="col">
+                            <label for="end_date" class="form-label">Starting Date</label>
+                            <input required type="text" class="form-control" name="end_date" id="end_date" aria-describedby="end_date">
+                            <div id="endDateHelp" class="form-text">Enter your ending date</div>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <button type="submit" class="btn btn-primary">Search Availability</button>
+                </form>
+
+
+            </div>
+        </div>
+
+    </div>
+{{end}}
