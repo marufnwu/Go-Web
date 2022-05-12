@@ -3,7 +3,6 @@ package render
 import (
 	"bytes"
 	"fmt"
-	"github.com/justinas/nosurf"
 	"github.com/marufnwu/go-bookings-website/internal/config"
 	"github.com/marufnwu/go-bookings-website/internal/models"
 	"html/template"
@@ -20,7 +19,7 @@ func NewTemplates(a *config.AppConfig) {
 }
 
 func AddDefaultData(td *models.TemplateData, r *http.Request) *models.TemplateData {
-	td.CSRFToken = nosurf.Token(r)
+
 	return td
 }
 
