@@ -123,8 +123,8 @@ func (repo *Repository) ReservationSummary(writer http.ResponseWriter, request *
 	reservation, ok := repo.App.Session.Get(request.Context(), "reservation").(models.Reservation)
 
 	if !ok {
-		log.Println("Cannot get item from session")
-
+		repo.App.Session.Put(request.Context(), "flash", "Can't get reservation from session")
+		http.Redirect(writer, request, "/", http.StatusTemporaryRedirect)
 		return
 	}
 

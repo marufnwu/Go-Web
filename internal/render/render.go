@@ -3,6 +3,7 @@ package render
 import (
 	"bytes"
 	"fmt"
+	"github.com/justinas/nosurf"
 	"github.com/marufnwu/go-bookings-website/internal/config"
 	"github.com/marufnwu/go-bookings-website/internal/models"
 	"html/template"
@@ -19,7 +20,11 @@ func NewTemplates(a *config.AppConfig) {
 }
 
 func AddDefaultData(td *models.TemplateData, r *http.Request) *models.TemplateData {
-
+	td.Flash = app.Session.PopString(r.Context(), "flash")
+	log.Println(td.Flash)
+	td.Warning = app.Session.PopString(r.Context(), "warning")
+	td.Error = app.Session.PopString(r.Context(), "error")
+	td.CSRFToken = nosurf.Token(r)
 	return td
 }
 

@@ -85,8 +85,21 @@
     <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.2.0/dist/js/datepicker-full.min.js"></script>
 
     <script>
+        console.log({{.}})
 
-        
+        {{with .Error}}
+        notify("{{.}}", "error")
+        console.log("akkakkak")
+        {{end}}
+
+        {{with .Flash}}
+        notify("{{.}}", "error")
+        console.log("akkakkak")
+        {{end}}
+
+        {{with .Warning}}
+        notify("{{.}}", "warning")
+        {{end}}
 
         function notify(msg, msgType){
             notie.alert({
@@ -95,10 +108,13 @@
             })
         }
 
+
         const elem = document.getElementById('foo');
         const rangepicker = new DateRangePicker(elem, {
             format: "yyyy-mm-dd"
         });
+
+
 
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (function () {
@@ -120,6 +136,8 @@
                     }, false)
                 })
         })()
+
+
     </script>
     {{block "js".}}
 
